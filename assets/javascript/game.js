@@ -1,3 +1,8 @@
+var directions = document.getElementById("directionstext");
+
+
+
+
 var wordList = [
     "broccoli",
     "asparagus",
@@ -10,13 +15,15 @@ var wordList = [
     "squash"
 ];
 
-var words = wordList[Math.floor(Math.random() * wordList.length)];
+var randomWords = wordList[Math.floor(Math.random() * wordList.length)];
 
 var answers = [];
 
-for (var i = 0; i < words.length; i++) {
+for (var i = 0; i < randomWords.length; i++) {
     answers[i] = "_";
 }
+
+var remainingLetters = randomWords.length;
 
 
 
