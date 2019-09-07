@@ -2,6 +2,7 @@ var directions = document.getElementById("directionstext");
 
 
 
+document.onkeyup = function(event) {
 
 var wordList = [
     "broccoli",
@@ -23,7 +24,16 @@ for (var i = 0; i < randomWords.length; i++) {
     answers[i] = "_";
 }
 
-var remainingLetters = randomWords.length;
+var remainingLetters = randomWords.length; {
+    document.getElementById ("answers").innerHTML = answers.join(" ");
+}
 
 
+
+
+
+
+
+
+}
 
