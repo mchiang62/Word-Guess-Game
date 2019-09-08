@@ -1,8 +1,6 @@
-var directions = document.getElementById("directionstext");
+// GLOBAL VARIABLES
 
-
-
-document.onkeyup = function(event) {
+// ARRAYS AND VARIABLES
 
 var wordList = [
     "broccoli",
@@ -16,17 +14,40 @@ var wordList = [
     "squash"
 ];
 
-var randomWords = wordList[Math.floor(Math.random() * wordList.length)];
+// words selected
+var selectedWord = "";
 
-var answers = [];
+// need var to split the letters in the word
+var lettersinWord = [];
 
-for (var i = 0; i < randomWords.length; i++) {
-    answers[i] = "_";
+// 
+var numofBlanks = 0;
+
+// b r _ _ c c_ _ _ 
+var blanksAndSuccesses = []; 
+
+// Wrong letters guessed
+var wrongGuesses = [];
+
+// Game counts
+var wins = 0;
+var losses = 0;
+var guessesLeft = 7;
+
+
+
+// FUNCTIONS
+
+function startGame () {
+    selectedWord = wordList[Math.floor(Math.random() * wordList.length)];
+
+    // to debug and test:
+    console.log(selectedWord);
+
 }
 
-var remainingLetters = randomWords.length; {
-    document.getElementById ("answers").innerHTML = answers.join(" ");
-}
+// in order for the function to work:
+startGame ();
 
 
 
@@ -34,6 +55,34 @@ var remainingLetters = randomWords.length; {
 
 
 
+// MAIN PROCESS
 
-}
+
+
+// var directions = document.getElementById("directionstext");
+
+
+// document.onkeyup = function(event) {
+
+
+
+
+
+// var answers = [];
+
+// for (var i = 0; i < randomWords.length; i++) {
+//     answers[i] = "_";
+// }
+
+// var remainingLetters = randomWords.length; 
+// {
+// document.getElementById ("answers").innerHTML = answers.join(" ");
+// }
+
+
+
+
+
+
+
 
