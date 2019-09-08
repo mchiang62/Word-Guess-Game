@@ -9,9 +9,11 @@ var wordList = [
     "spinach",
     "cabbage",
     "cauliflower",
-    "eggplants",
+    "eggplant",
     "zucchini",
-    "squash"
+    "squash",
+    "carrot",
+    "kale",
 ];
 
 // words selected
@@ -20,7 +22,7 @@ var selectedWord = "";
 // need var to split the letters in the word
 var lettersinWord = [];
 
-// 
+//number of blanks
 var numofBlanks = 0;
 
 // b r _ _ c c_ _ _ 
@@ -36,18 +38,52 @@ var guessesLeft = 7;
 
 
 
-// FUNCTIONS
+// FUNCTIONS - this starts the game
 
 function startGame () {
     selectedWord = wordList[Math.floor(Math.random() * wordList.length)];
+    lettersinWord = selectedWord.split("");
+    numofBlanks = lettersinWord.length;
+
+    // create a reset - need to reset or it won't work
+    guessesleft = 7;
+    wrongGuesses = [];
+    blanksAndSuccesses = [];
+
+    // need to create loop to populate blanks and successes
+
+    for (var i = 0; i < numofBlanks; i++) {
+     blanksAndSuccesses.push("_");
+
+}
+
 
     // to debug and test:
     console.log(selectedWord);
+    console.log(lettersinWord);
+    console.log(numofBlanks);
+    console.log(blanksAndSuccesses);
 
 }
 
 // in order for the function to work:
 startGame ();
+
+
+
+
+// create variables  - document.ElementbyId
+
+
+// need to use innerHTML to change HTML text 
+
+
+
+// add function so 
+
+
+// need to add textcontent
+
 
 
 
@@ -70,9 +106,7 @@ startGame ();
 
 // var answers = [];
 
-// for (var i = 0; i < randomWords.length; i++) {
-//     answers[i] = "_";
-// }
+
 
 // var remainingLetters = randomWords.length; 
 // {
