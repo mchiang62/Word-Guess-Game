@@ -36,9 +36,19 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 7;
 
+// create variables  - document.ElementbyId
 
+// var directions = document.getElementById("directionstext");
+// var wordToGuess = document.getElementById("wordGuess");
+// var wrong = document.getElementById("wrongGuess");
+// var remainder = document.getElementById("guessesRemaining");
+// var guessed = document.getElementById("guessedLetters");
+// var win = document.getElementById("winCount");
+// var loss = document.getElementById("lossCount");
 
 // FUNCTIONS - this starts the game
+
+
 
 function startGame () {
     selectedWord = wordList[Math.floor(Math.random() * wordList.length)];
@@ -55,9 +65,17 @@ function startGame () {
     for (var i = 0; i < numofBlanks; i++) {
      blanksAndSuccesses.push("_");
 
-}
+    }
+
+// trying to use innerHTML to change HTML text but it won't work ******
+
+   console.log(blanksAndSuccesses.join("  "));
+   console.log(guessesLeft);
+   console.log(wins);
+   console.log(losses);
 
 
+   
     // to debug and test:
     console.log(selectedWord);
     console.log(lettersinWord);
@@ -66,16 +84,24 @@ function startGame () {
 
 }
 
-// in order for the function to work:
+function checkLetters (letter) {
+
+
+}
+
+// MAIN PROCESS in order for the function to work:
 startGame ();
 
+// keyclicks
+document.onkeyup = function(event) {
+    var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+  console.log(letterGuessed);
+
+
+}
 
 
 
-// create variables  - document.ElementbyId
-
-
-// need to use innerHTML to change HTML text 
 
 
 
@@ -91,14 +117,10 @@ startGame ();
 
 
 
-// MAIN PROCESS
 
 
 
-// var directions = document.getElementById("directionstext");
 
-
-// document.onkeyup = function(event) {
 
 
 
