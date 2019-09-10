@@ -119,7 +119,7 @@ if(LetterInWord) {
 
 else {
     wrongGuesses.push(letter);
-    guessesRemaining-- 
+    guessesLeft-- 
 
 }
 
@@ -135,7 +135,7 @@ guesses.textContent = blanksAndSuccesses.toString();
 
 
 
-    if (lettersinWord.toString() === blanksAndSuccesses.toString()) {
+    if (lettersinWord.toString() == blanksAndSuccesses.toString()) {
         wins++;
         // alert("YOU WON!!");
         
@@ -146,7 +146,7 @@ startGame();
 
     }
 
-else {
+else if (guessesRemaining == 0) {
     losses++;
     // alert("YOU LOST!!");
 
