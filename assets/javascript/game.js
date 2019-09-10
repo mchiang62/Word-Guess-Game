@@ -43,9 +43,8 @@ var guessesLeft = 7;
 // var wrong = document.getElementById("wrongGuess");
 var remainder = document.getElementById("guessesRemaining");
 // var guessed = document.getElementById("guessedLetters");
-// var win = document.getElementById("winCount");
-// var loss = document.getElementById("lossCount");
-
+var win = document.getElementById("winCount");
+var loss = document.getElementById("lossCount");
 var guesses = document.getElementById("guesses");
 
 
@@ -75,12 +74,14 @@ function startGame () {
 
     }
 
+    console.log(blanksAndSuccesses);
+
 // trying to use innerHTML to change HTML text but it won't work ******
 
    guesses.textContent = blanksAndSuccesses.join("  ");
    remainder.textContent = guessesLeft;
-   console.log(wins);
-   console.log(losses);
+   win.textContent = wins;
+   loss.textContent = losses;
 
 
    
@@ -97,23 +98,63 @@ function checkLetters (letter) {
 
 
 
-    var IsLetterInWord = false;
+    var LetterInWord = false;
     for (var i = 0; i<numofBlanks; i++) {
-    
-    console.log(selectedWord[i]);
-
+    // console.log(selectedWord[i]);
         if (selectedWord[i] == letter) {
-
-            IsLetterInWord = true;
+            LetterInWord = true;
 
         }
     }
 
 
 // create for loop to check existing letters - blanksAndSuccesses 
+if(LetterInWord) {
+    for (var i=0; i<numofBlanks; i++) {
+    if(selectedWord[i] == letter) {
+        blanksAndSuccesses[i] = letter;
+     }
+    }
+}
+
+else {
+    wrongGuesses.push(letter);
+    guessesRemaining-- 
+
+}
+
+console.log(blanksAndSuccesses);
+
+}
+
+function roundComplete(){
+    console.log("Win Count: " + wins + " | Loss Count: " + losses + " | Guesses Left " + guessesLeft);
+
+guessesRemaining.textContent = guessesLeft;
+guesses.textContent = blanksAndSuccesses.toString();
 
 
 
+    if (lettersinWord.toString() === blanksAndSuccesses.toString()) {
+        wins++;
+        // alert("YOU WON!!");
+        
+win.textContent = wins;
+
+startGame();
+
+
+    }
+
+else {
+    losses++;
+    // alert("YOU LOST!!");
+
+    loss.textContent = losses;
+
+    startGame();
+
+}
 
 }
 
@@ -124,6 +165,8 @@ startGame ();
 document.onkeyup = function(event) {
     var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
 checkLetters(letterGuessed);
+roundComplete();
+
 
   console.log(letterGuessed);
 
