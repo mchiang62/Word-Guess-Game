@@ -1,3 +1,6 @@
+// create a restart game function to reset game; create if statement = 0. if statement should run reset game function
+
+
 // GLOBAL VARIABLES
 
 // ARRAYS AND VARIABLES
@@ -155,7 +158,9 @@ else if (guessesLeft == 0) {
 
     loss.textContent = losses;
 
-    startGame();
+    startGame(); 
+
+    // put restart game. 
 
 }
 
