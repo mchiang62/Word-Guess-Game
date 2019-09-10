@@ -42,7 +42,7 @@ var guessesLeft = 7;
 // var wordToGuess = document.getElementById("wordGuess");
 // var wrong = document.getElementById("wrongGuess");
 var remainder = document.getElementById("guessesRemaining");
-// var guessed = document.getElementById("guessedLetters");
+var guessed = document.getElementById("guessedLetters");
 var win = document.getElementById("winCount");
 var loss = document.getElementById("lossCount");
 var guesses = document.getElementById("guesses");
@@ -117,9 +117,11 @@ if(LetterInWord) {
     }
 }
 
+
+
 else {
     wrongGuesses.push(letter);
-    guessesLeft-- 
+    guessesLeft--
 
 }
 
@@ -128,16 +130,17 @@ console.log(blanksAndSuccesses);
 }
 
 function roundComplete(){
-    console.log("Win Count: " + wins + " | Loss Count: " + losses + " | Guesses Left " + guessesLeft);
+    console.log("Win Count: " + wins + " | Loss Count: " + losses + " | Guesses Remaining " + guessesLeft);
 
 guessesRemaining.textContent = guessesLeft;
-guesses.textContent = blanksAndSuccesses.toString();
+guesses.textContent = blanksAndSuccesses.join(" ");
+guessed.textContent = wrongGuesses.join("  ");
 
 
 
     if (lettersinWord.toString() == blanksAndSuccesses.toString()) {
         wins++;
-        // alert("YOU WON!!");
+        alert("YOU WIN :)");
         
 win.textContent = wins;
 
@@ -146,9 +149,9 @@ startGame();
 
     }
 
-else if (guessesRemaining == 0) {
+else if (guessesLeft == 0) {
     losses++;
-    // alert("YOU LOST!!");
+    alert("YOU LOSE :(");
 
     loss.textContent = losses;
 
