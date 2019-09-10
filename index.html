@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vegetable Guessing Game</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
+   
 
 </head>
 <body>
@@ -23,19 +23,25 @@
 
 <div class="row"> 
     <p id="wordGuess">Guess the Word</p>
-    <h2 id="guesses">_ _ _ _ _ _ </h2>
+    <h2 id="guesses"></h2>
     </div>
 
 <div class="row">
-    <p id="wrongGuess">Wrong Guesses</p>
+    <p>Wrong Guesses: <span id="wrongGuess"></span></p>
 </div>
 
-    <p id="guessesRemaining">Number of Guesses Remaining</p>
-    <p id="guessedLetters">Letters Already Guessed</p>
-    <p id="winCount">Win Count</p>
+    <p>Number of Guesses Remaining:  <span id="guessesRemaining"></span>
+    
+    </p>
+
+    <p>Letters Already Guessed <span id="guessedLetters"></span></p>
+    <p>Win Count <span id="winCount"></span> </p>
     <p id="lossCount">Loss Count</p>
     
 
 </div>
+
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+
 </body>
 </html>
