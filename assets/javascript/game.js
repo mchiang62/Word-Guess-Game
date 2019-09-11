@@ -35,8 +35,6 @@ var guessesLeft = 7;
 // create variables  - document.ElementbyId
 
 var directions = document.getElementById("directionstext");
-// var wordToGuess = document.getElementById("wordGuess");
-// var wrong = document.getElementById("wrongGuess");
 var remainder = document.getElementById("guessesRemaining");
 var guessed = document.getElementById("guessedLetters");
 var win = document.getElementById("winCount");
