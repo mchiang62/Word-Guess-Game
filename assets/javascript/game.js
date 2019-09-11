@@ -1,10 +1,3 @@
-// create a restart game function to reset game; create if statement = 0. if statement should run reset game function
-
-
-// GLOBAL VARIABLES
-
-// ARRAYS AND VARIABLES
-
 var wordList = [
     "broccoli",
     "asparagus",
@@ -41,7 +34,7 @@ var guessesLeft = 7;
 
 // create variables  - document.ElementbyId
 
-// var directions = document.getElementById("directionstext");
+var directions = document.getElementById("directionstext");
 // var wordToGuess = document.getElementById("wordGuess");
 // var wrong = document.getElementById("wrongGuess");
 var remainder = document.getElementById("guessesRemaining");
@@ -56,7 +49,6 @@ var guesses = document.getElementById("guesses");
 // FUNCTIONS - this starts the game
 
 
-
 function startGame () {
     selectedWord = wordList[Math.floor(Math.random() * wordList.length)];
     lettersinWord = selectedWord.split("");
@@ -69,7 +61,7 @@ function startGame () {
     wrongGuesses = [];
     blanksAndSuccesses = [];
 
-    // square brackets - array, initialize arrays,
+    
     // need to create loop to populate blanks and successes
 
     for (var i = 0; i < numofBlanks; i++) {
@@ -79,16 +71,15 @@ function startGame () {
 
     console.log(blanksAndSuccesses);
 
-// trying to use innerHTML to change HTML text but it won't work ******
+// linking js text to HTML
 
    guesses.textContent = blanksAndSuccesses.join("  ");
    remainder.textContent = guessesLeft;
    win.textContent = wins;
    loss.textContent = losses;
 
-
    
-    // to debug and test:
+    // DEBUG & TEST:
     console.log(selectedWord);
     console.log(lettersinWord);
     console.log(numofBlanks);
@@ -96,7 +87,8 @@ function startGame () {
 
 }
 
-// this function isn't working???
+
+
 function checkLetters (letter) {
 
 
@@ -160,7 +152,9 @@ else if (guessesLeft == 0) {
 
     startGame(); 
 
-    // put restart game. 
+    location.reload();
+
+    // put restart game function?
 
 }
 
@@ -175,9 +169,9 @@ document.onkeyup = function(event) {
 checkLetters(letterGuessed);
 roundComplete();
 
+directions.textContent = "";
 
   console.log(letterGuessed);
-
 
 
 }
@@ -186,41 +180,4 @@ roundComplete();
 
 
 
-
-// add function so 
-
-
-// need to add textcontent
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var answers = [];
-
-
-
-// var remainingLetters = randomWords.length; 
-// {
-// document.getElementById ("answers").innerHTML = answers.join(" ");
-// }
-
-
-
-
-
-
-
-
+// create a restart game function to reset game; create if statement = 0. if statement should run reset game function
