@@ -61,7 +61,7 @@ const startGame = () => {
 
     // need to create loop to populate blanks and successes
 
-    for (var i = 0; i < numofBlanks; i++) {
+    for (let i = 0; i < numofBlanks; i++) {
         blanksAndSuccesses.push("_");
 
     }
@@ -86,12 +86,10 @@ const startGame = () => {
 
 
 
-function checkLetters(letter) {
+const checkLetters = (letter) => {
 
-
-
-    var LetterInWord = false;
-    for (var i = 0; i < numofBlanks; i++) {
+    let LetterInWord = false;
+    for (let i = 0; i < numofBlanks; i++) {
         // console.log(selectedWord[i]);
         if (selectedWord[i] == letter) {
             LetterInWord = true;
@@ -101,7 +99,7 @@ function checkLetters(letter) {
 
     // create for loop to check existing letters - blanksAndSuccesses 
     if (LetterInWord) {
-        for (var i = 0; i < numofBlanks; i++) {
+        for (let i = 0; i < numofBlanks; i++) {
             if (selectedWord[i] == letter) {
                 blanksAndSuccesses[i] = letter;
             }
@@ -155,7 +153,7 @@ startGame();
 
 // keyclicks
 document.onkeyup = function (event) {
-    var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+    let letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
     checkLetters(letterGuessed);
     roundComplete();
 
@@ -168,11 +166,7 @@ document.onkeyup = function (event) {
 
 
 //things to still work on
-//when the user loses, it shouldn't restart - it should keep going 
-
-
-
-
-
-
-// create a restart game function to reset game; create if statement = 0. if statement should run reset game function
+//when the user loses, it shouldn't restart - it should keep going and there should be count++ for loss count
+//once you get a win count, number of guesses remaining & letters already guessed should reset
+//once the letter has been guessed, number of guesses should not should decrease, and that letter shouldn't show up again on letters guessed already
+//create a restart game function to reset game instead of refreshing the page
