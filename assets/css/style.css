@@ -6,3 +6,7 @@ body {
 #directionstext {
     font-style: oblique;
 }
+
+#footer {
+    margin-top: 100px;
+}

@@ -1,52 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vegetable Guessing Game</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vegetable Guessing Game</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
 
 </head>
+
 <body>
-    <div class="container">
-<div class="row">
-    <h1 class="col-sm-12 text-info">Guess the Vegetable Game</h1>
+  <div class="container">
+    <div class="row">
+      <h1 class="col-sm-12 text-info">Guess the Vegetable Game</h1>
 
-</div>
-
-<div class="row">
-        <p id="directionstext">Press Any Key To Start Playing!</p>
-     
     </div>
-        
 
-<div class="card" style="width: 18rem;">
-        <img src="https://i.scdn.co/image/d1e38eab864f60e748c648c9b940efaced139f19" class="card-img-top" alt="...">
+    <div class="row">
+      <p id="directionstext">Press Any Key To Start Playing!</p>
 
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"> <p id="wordGuess">Guess the Word</p>
-            <h2 id="guesses"></h2></li>
+    </div>
 
 
-          <li class="list-group-item"><p>Number of Guesses Remaining:  <span id="guessesRemaining"></span>
+    <div class="card" style="width: 18rem;">
+      <img src="https://i.scdn.co/image/d1e38eab864f60e748c648c9b940efaced139f19" class="card-img-top" alt="...">
 
-          </p></li>
-          <li class="list-group-item"><p>Letters Already Guessed:  <span id="guessedLetters"></span></p></li>
-          <li class="list-group-item"> <p>Win Count:  <span id="winCount"></span> </p></li>
-          <li class="list-group-item"><p>Loss Count:  <span id="lossCount"></span></p></li>
-        </ul>
-      </div>
-
-
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <p id="wordGuess">Guess the Word</p>
+          <h2 id="guesses"></h2>
+        </li>
 
 
+        <li class="list-group-item">
+          <p>Number of Guesses Remaining: <span id="guessesRemaining"></span>
 
-</div>
+          </p>
+        </li>
+        <li class="list-group-item">
+          <p>Letters Already Guessed: <span id="guessedLetters"></span></p>
+        </li>
+        <li class="list-group-item">
+          <p>Win Count: <span id="winCount"></span> </p>
+        </li>
+        <li class="list-group-item">
+          <p>Loss Count: <span id="lossCount"></span></p>
+        </li>
+      </ul>
+    </div>
 
-<script type="text/javascript" src="assets/javascript/game.js"></script>
+
+    <footer id="footer"></footer>
+
+
+  </div>
+
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
 
 </body>
+
 </html>
